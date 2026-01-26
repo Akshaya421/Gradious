@@ -1,0 +1,161 @@
+ /*course Enrollment
+    1.create a class for"CourseEnrollment" with the following properties
+       studentName(String)
+       courseName(string)
+       enrollmentDate(String)
+       courseDuration(int)
+       courseFee(double)
+    2. properties should be private and create getter and setter methods for these properties 
+    3.setcoursefee and setcourseduration should have validation   
+
+*/
+
+class CourseEnrollment{ 
+
+    private String studentName; 
+
+    private String courseName; 
+
+    private String enrollmentDate; 
+
+    private int courseDuration; 
+
+    private double courseFee; 
+
+     public void setValues(String sname, String cname, String en, int dur,double fee){ 
+
+          studentName=sname; 
+
+          courseName=cname; 
+
+          enrollmentDate=en; 
+
+          courseDuration=dur; 
+
+          courseFee=fee; 
+
+     } 
+
+     public String getstudentName(){ 
+
+        return studentName; 
+
+     } 
+
+     public String getcourseName(){ 
+
+        return courseName; 
+
+     } 
+
+     public String getenrollmentDate(){ 
+
+        return enrollmentDate; 
+
+     } 
+
+     public int courseDuration(){ 
+
+        return courseDuration; 
+
+     } 
+
+     public double courseFee(){ 
+
+        return courseFee; 
+
+     } 
+
+     public void display(){ 
+
+        //CourseEnrollment c=new CourseEnrollment(); 
+
+        if(courseDuration < 0 || courseFee <0){ 
+
+        System.out.println("Error Occured, Please provide Positive values!!!!!"); 
+
+     } 
+
+        System.out.println("studentName:"+studentName+"\ncourseName:"+courseName+"\n"+"enrollmentdate:"+enrollmentDate+"\n"+"courseDuration:"+courseDuration+"\n"+"coursefee:"+courseFee+"\n"); 
+
+      
+
+      } 
+
+ 
+
+} 
+
+ 
+
+public class CourseEnrollmentTest { 
+
+   public static void main(String[] args){ 
+
+      CourseEnrollment c1=new CourseEnrollment(); 
+
+      CourseEnrollment c2=new CourseEnrollment(); 
+
+      CourseEnrollment c3=new CourseEnrollment(); 
+
+      c1.setValues("Akshaya","java","2026-2",6,50000); 
+
+     c2.setValues("navya sri","c","2026-4",8,58000); 
+
+     c3.setValues("zuveriya","python","2026-9",6,70000); 
+
+      c1.display(); 
+
+       c2.display(); 
+
+        c3.display(); 
+
+ 
+
+   } 
+
+     
+
+} 
+
+ /*
+
+Output: 
+
+studentName:Akshaya 
+
+courseName:java 
+
+enrollmentdate:2026-2 
+
+courseDuration:6 
+
+coursefee:50000.0 
+
+ 
+
+studentName:navya sri 
+
+courseName:c 
+
+enrollmentdate:2026-4 
+
+courseDuration:8 
+
+coursefee:58000.0 
+
+ 
+
+studentName:zuveriya 
+
+courseName:python 
+
+enrollmentdate:2026-9 
+
+courseDuration:6 
+
+coursefee:70000.0 */
+
+ 
+
+ 
