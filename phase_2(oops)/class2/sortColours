@@ -1,0 +1,37 @@
+//input:[1,2,0,1,2,2,1,0,0,2,0,1,0,2,2]
+//output:[0,0,0,0,1,1,1,1,1,1,1,2,2,2,2]
+import java.util.Arrays;
+class Colours{
+    public static void swap(int[] arr,int i, int k){
+        int temp=arr[i];
+        arr[i]=arr[k];
+        arr[k]=temp;
+    }
+    public static int[] c(int[] arr){
+        int n=arr.length;
+       int i=0;
+       int j=n-1;
+       int k=0;
+       while(k<j){
+        if(arr[k]==0){
+            swap(arr,k,i);
+            i++;
+            k++;
+        }else if(arr[k]==2){
+            swap(arr,k,j);
+            j--;
+        }else if(arr[k]==1){
+            k++;
+        }
+       }  
+    return arr;
+    }
+    
+}
+public class SortColours {
+    public static void main(String[] args){
+        int[] arr=new int[]{1,2,0,2,0,1,2,0,1,2};
+  Colours co=new Colours();
+  System.out.println(Arrays.toString(co.c(arr)));
+    }
+}
