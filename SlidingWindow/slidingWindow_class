@@ -1,0 +1,150 @@
+                       Sliding Window
+📌 What is Sliding Window?
+      Sliding Window is a technique used to solve problems involving:
+      Subarrays
+      Substrings
+      Contiguous sequences
+
+Instead of using nested loops (O(n²)), we optimize to O(n) by maintaining a “window” and sliding it.
+
+there are 2 types
+1.fixed size window
+2.variable size window
+
+
+1️⃣ Fixed Size Sliding Window
+
+Used when window size k is given.
+
+🔹 Example:
+
+Find maximum sum of subarray of size k.
+
+🧠 Idea:
+
+First calculate sum of first k elements
+
+Then slide window:
+
+Add next element
+
+Remove first element of previous window
+...............................
+input:[2,3,5,8,1,4] k=3
+output:16[3,5,8]
+logic:
+    [2,3,5] sum=10 
+         remove 2 and add 8
+    [3,5,8] sum=16
+        remove 3 and add 1
+    [5,8,1] sum=14
+        remove 5 and add 4
+    [8,1,4] sum=13
+        end
+   
+  .........................
+💻 Java Code:
+public class SlidingWindow {
+    public static int maxSum(int[] arr, int k) {
+        int n = arr.length;
+        int windowSum = 0;
+
+        // First window
+        for (int i = 0; i < k; i++) {
+            windowSum += arr[i];
+        }
+
+        int maxSum = windowSum;
+
+        // Slide window
+        for (int i = k; i < n; i++) {
+            windowSum += arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, windowSum);
+        }
+
+        return maxSum;
+    }
+}
+⏱ Time Complexity: O(n)
+-----------------------------
+2️⃣ Variable Size Sliding Window
+
+Used when window size is NOT fixed.
+
+Mostly used in:
+
+    Longest substring without repeating characters
+
+    Smallest subarray with sum ≥ target
+
+    Longest substring with at most k distinct characters
+    ......................
+    class Solution {
+    public int minSubArrayLen(int target, int[] nums) {
+
+        int i = 0;
+        int sum = 0;
+        int minLen = Integer.MAX_VALUE;
+
+        for (int j = 0; j < nums.length; j++) {
+            sum += nums[j];
+
+            while (sum >= target) {
+                minLen = Math.min(minLen, j - i + 1);
+                sum -= nums[i];
+                i++;
+            }
+        }
+
+        return minLen == Integer.MAX_VALUE ? 0 : minLen;
+    }
+}
+.............................
+🔹 Example:
+
+Longest substring without repeating characters
+
+💻 Java Code:
+import java.util.*;
+
+public class VariableWindow {
+    public static int lengthOfLongestSubstring(String s) {
+        int i = 0, j = 0;
+        int maxLen = 0;
+        HashSet<Character> set = new HashSet<>();
+
+        while (j < s.length()) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j));
+                maxLen = Math.max(maxLen, j - i + 1);
+                j++;
+            } else {
+                set.remove(s.charAt(i));
+                i++;
+            }
+        }
+
+        return maxLen;
+    }
+}
+⏱ Time Complexity: O(n)
+
+
+🎯 When to Use Sliding Window?
+
+Use it when:
+
+Problem involves contiguous subarray/substring
+
+You see words like:
+       longest
+       shortest
+       maximum
+       minimum
+       subarray
+       substring
+
+⚡ Sliding Window vs Brute Force
+Approach	Time Complexity
+Nested loops	O(n²)
+Sliding Window	O(n)
