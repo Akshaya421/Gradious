@@ -1,0 +1,77 @@
+🟢 🔹 Fixed Size Sliding Window (Start Here)
+1️⃣ Maximum Sum Subarray of Size K
+
+👉 Basic foundation problem
+
+Practice on:
+GeeksforGeeks – “Maximum Sum Subarray of Size K”
+
+2️⃣ Find Maximum Average Subarray I
+
+From LeetCode
+
+Problem #643
+
+3️⃣ Sliding Window Maximum 🔥🔥
+
+Very Important
+
+Problem #239 on LeetCode
+
+(Hard – uses Deque)
+
+🟡 🔹 Variable Size Sliding Window (Very Important)
+4️⃣ Longest Substring Without Repeating Characters
+
+Problem #3 – LeetCode
+
+⭐ MUST DO
+
+5️⃣ Longest Repeating Character Replacement
+
+Problem #424 – LeetCode
+
+Very common in interviews.
+
+6️⃣ Minimum Size Subarray Sum
+
+Problem #209 – LeetCode
+
+7️⃣ Minimum Window Substring 🔥🔥🔥
+
+Problem #76 – LeetCode
+
+Very important for product-based companies.
+
+🔵 🔹 Prefix Sum + Sliding Window Combo
+8️⃣ Subarray Sum Equals K
+
+Problem #560 – LeetCode
+
+You already asked this 👍
+
+9️⃣ Binary Subarrays With Sum
+
+Problem #930 – LeetCode
+
+🔴 🔹 Advanced Pattern Recognition
+🔟 Longest Subarray with At Most K Distinct Characters
+
+Problem #340 – LeetCode
+
+1️⃣1️⃣ Fruits Into Baskets
+
+Problem #904 – LeetCode
+
+Same pattern as K distinct characters.
+
+🧠 Pattern Recognition Trick (Very Important)
+
+If problem says:
+
+Words in Question	Use
+Subarray / Substring	Sliding Window
+Longest / Shortest	Variable Window
+Fixed size K	Fixed Window
+Count subarrays	Prefix Sum
+Negative numbers	Prefix Sum (Not pure sliding window)
