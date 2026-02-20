@@ -1,0 +1,66 @@
+ > used in sum of cumulative array
+ 
+Q)
+input:  0 1 2 3 4
+       [1,2,3,4,5]
+       i        
+   sum=0;
+    explanation:                output
+      sum + arr[0] = 0+1 -> sum = 1
+      sum + arr[1] = 2+1 -> sum = 3
+      sum + arr[2] = 3+3 -> sum = 6
+      sum + arr[3] = 6+4 -> sum = 10
+      sum + arr[4] = 10+5 ->sum = 15
+      
+   output:[1,3,6,10,15]
+
+   newarr[0]=arr[0]
+   newarr[i]=arr[i]+sum;
+
+program------------
+class Program1{
+    public static void main(String[] args){
+     int[] arr={1,2,3,4,5};
+      //int[] arr={1,2,3,4,5};
+     int n=arr.length;
+     int sum=0;
+     int[] newarr=new int[n];
+     int index=0;
+     for (int  i=0; i<n; i++){
+         sum+=arr[i];
+     }
+     for(int i=0; i<n; i++){
+        sum-=arr[i];
+        newarr[index++]=sum;
+     }
+     for(int i=0; i<n; i++){
+        System.out.print(newarr[i]+" ");
+     }
+
+    }
+}
+//14 12 9 5 0
+-----------------
+// [3,-3,5,0,-6] find prefix array for this elements
+public class Program2 {
+    public static void main(String[] args){
+        int[] arr={3,-3,5,0,-6};
+        int n=arr.length;
+        int[] newarr=new int[n];
+       int sum=arr[0];
+       int index=1;
+       newarr[0]=arr[0];
+       for(int i=1; i<n; i++){
+        sum=sum+arr[i];
+        newarr[index++]=sum;
+       }
+       for(int i=0; i<n; i++){
+        System.out.print(newarr[i]+" ");
+       }
+    }
+}
+//3 0 5 5 -1
+---------------------
+ 
+leetcode=303
+
