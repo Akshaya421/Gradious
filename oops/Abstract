@@ -1,0 +1,160 @@
+/*  
+Manufacturing Domain
+->create an abstract class "productLine" with the following abstract methods:
+    produce_item() - to produce an item
+    calculate_production_cost() - to calculate the cost of production
+ -> create two subclass "electronicsLine" and "furnitureline" that implement the abstract methods
+     electronicsline
+         property:number_of_units
+         calcukate_production_cost(): to calculate the cost of production
+     furnitureLine:
+        property:wood_type
+        implement the abstract methods for producing furniture and caalculating production costs
+        
+you are required to:
+   define getter and setter methods for number_of_units i electronicsLine aand wood_type in furniture
+Demonstrate how these classes can be used in a manufacturing management system
+*/
+abstract class ProductLine { 
+
+    public abstract void produce_item(); 
+
+    public abstract double cal_prod_cost(); 
+
+} 
+
+ 
+
+class ElectronicsLine extends ProductLine { 
+
+    private int num_of_units; 
+
+ 
+
+    public void setnum_of_units(int num_of_units) { 
+
+        this.num_of_units = num_of_units; 
+
+    } 
+
+ 
+
+    public int getnum_of_units() { 
+
+        return num_of_units; 
+
+    } 
+
+ 
+
+    @Override 
+
+    public void produce_item() { 
+
+        System.out.println("Produce electronics items"); 
+
+    } 
+
+ 
+
+    @Override 
+
+    public double cal_prod_cost() { 
+
+        return num_of_units * 5000; 
+
+    } 
+
+} 
+
+ 
+
+class FurnitureLine extends ProductLine { 
+
+    private String wood_type; 
+
+ 
+
+    public void setwood_type(String wood_type) { 
+
+        this.wood_type = wood_type; 
+
+    } 
+
+ 
+
+    public String getwood_type() { 
+
+        return wood_type; 
+
+    } 
+
+ 
+
+    @Override 
+
+    public void produce_item() { 
+
+        System.out.println("Produce furniture items: " + wood_type); 
+
+    } 
+
+ 
+
+    @Override 
+
+    public double cal_prod_cost() { 
+
+        return 50000; 
+
+    } 
+
+} 
+
+ 
+
+class Assignment3 { 
+
+    public static void main(String[] args) { 
+
+        ElectronicsLine e = new ElectronicsLine(); 
+
+        e.setnum_of_units(20); 
+
+        e.produce_item(); 
+
+        System.out.println("Electronics production cost: " + e.cal_prod_cost()); 
+
+ 
+
+        System.out.println(); 
+
+ 
+
+        FurnitureLine f = new FurnitureLine(); 
+
+        f.setwood_type("teak"); 
+
+        f.produce_item(); 
+
+        System.out.println("Furniture production cost: " + f.cal_prod_cost()); 
+
+    } 
+
+} 
+/*
+
+Output:  
+
+Produce electronics items 
+
+Electronics production cost: 100000.0 
+
+ 
+
+Produce furniture items: teak 
+
+Furniture production cost: 50000.0 
+*/
+
+ 
